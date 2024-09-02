@@ -153,14 +153,39 @@ switches as shown below:
 
 <div align="center">
 
-![image](https://github.com/user-attachments/assets/1a0e2b22-a434-4ad1-8e58-c256562a925e)
+![image](https://github.com/user-attachments/assets/2f50bd7d-0303-436c-a85f-73eb3d20d270)
+
 
 
 </div>
 
 
+
 ## 3.2 Configure the SVI for VLAN 10
+Here I configured the IP address according to the Addressing Table for SVI for
+VLAN 10 on S1 and S2. I enabled the SVI interfaces as shown below:
+
+<div align="center">
+
+![image](https://github.com/user-attachments/assets/a6b3b8aa-c482-456f-8ccf-143da8e4366e)
+
+</div>
+
+
+
 ## 3.3 Configure VLAN 333 with the name Native on S1 and S2
+
+Here I created vlan 333 with the name Native on VLAN 333 on S2 and S1 and
+another VLAN 999 called ParkingLot on both switch S1 and S2 as shown in the
+picture below:
+
+<div align="center">
+
+![image](https://github.com/user-attachments/assets/adc8e824-ff80-40bf-b0d0-faf248d646ca)
+
+</div>
+
+
 # 4. Part 3: Configure Switch Security
 ## 4.1 Implement 802.1Q trunking
 ## 4.2 Configure access ports
