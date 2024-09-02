@@ -47,6 +47,7 @@ picture below:
 ![image](https://github.com/user-attachments/assets/eb5b0109-0f3f-4d29-9134-aa8aa9e3f0b6)
 
 </div>
+
 ## 2.2 Configure Router R1
 
 The script below sets up basic router configuration, including setting the hostname, disabling DNS lookup, and excluding specific IP address ranges from the DHCP pool
