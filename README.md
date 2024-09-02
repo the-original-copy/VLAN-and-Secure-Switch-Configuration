@@ -234,9 +234,246 @@ I verified that DTP negotiation was disabled as confirmed by the picture below:
 </div>
 
 ## 4.2 Configure access ports
+
+On S1 I configured F0/5 and F0/6 as access ports associated with VLAN 10 while on
+S2 I configured F0/18 as the access port that is associated with VLAN 10 as shown
+below:
+
+<div align="center">
+
+![image](https://github.com/user-attachments/assets/ced5aca3-5199-435b-b612-df16ba61a24c)
+
+</div>
+
+
+
 ## 4.3 Secure and disable unused switchports
+
+On both S1 and S2 I moved the unused ports from VLAN 1 to VLAN 999 and
+disabled the unused ports as shown below:
+
+<div align="center">
+
+![image](https://github.com/user-attachments/assets/f492878c-bc7c-4a7a-88f1-4e0b99f629ad)
+
+</div>
+
+Next I verified that the unused ports are disabled and associated with VLAN 999 as
+confirmed by the picture below:
+
+<div align="center">
+
+![image](https://github.com/user-attachments/assets/cbf6a659-14f6-4b0f-927f-360cc4065bff)
+
+</div>
+
+
+
 ## 4.4 Document and implement port security features
+
+In S1 I issued the **show port-security interface f0/6** in order to display the default
+port security settings as confirmed by the picture below:
+
+<div align="center">
+
+![image](https://github.com/user-attachments/assets/3b9fd0aa-ef76-47b9-bf15-9fcfcbf68b5a)
+
+
+</div>
+
+Next on S1 I enabled port security on f0/6 with the following settings:
+* Maximum number of MAC addresses : **3**
+* Violation type: **Restrict**
+* Aging time: **60min**
+The picture below confirms that the listed port security settings were loaded:
+
+<div align="center">
+
+![image](https://github.com/user-attachments/assets/37a8366c-73d5-49bc-8893-ee0ab256fc41)
+
+</div>
+
+The port security aging type: **inactivity** was not loaded since the command was not
+supported as shown below:
+
+<div align="center">
+
+![image](https://github.com/user-attachments/assets/89ea7383-0b53-4d86-b087-74019de98bfc)
+
+</div>
+
+I verified port security by checking the interface f0/6 and the port security address as
+confirmed by the pictures below:
+
+<div align="center">
+
+![image](https://github.com/user-attachments/assets/aa45621c-fbda-46b7-af85-0f38e415f82a)
+<br/> Image: port-security on interface f0/6
+
+![image](https://github.com/user-attachments/assets/3297f551-a2ae-4697-ae34-3909c3f15819)
+<br/> Image: port-security address
+
+</div>
+
+Next I enabled port security on interface f0/18 in S2 by configuring the port to add
+MAC addresses learned on the port automatically to the running configuration as
+shown in the picture below:
+
+<div align="center">
+
+![image](https://github.com/user-attachments/assets/9e50aa30-5bb2-4b93-9af2-8966b5239535)
+
+
+</div>
+
+Next I configured the below port security settings on S2 F0/18:
+* Maximum number of MAC addresses: **2**
+* Violation type: **protect**
+* Aging time: **60min**
+As confirmed by the picture below:
+
+<div align="center">
+
+![image](https://github.com/user-attachments/assets/21ccb0f5-f3d9-4825-8f60-fa04ecd61c5a)
+
+
+</div>
+
+Next I verified port security on S2 F0/18 by checking the port-security interface and
+port-security address as shown below:
+
+<div align="center">
+
+![image](https://github.com/user-attachments/assets/bab93ded-cd3d-489f-879a-36944ad6bef5)
+<br/> Image: port-security interface F0/18
+
+![image](https://github.com/user-attachments/assets/19cef5db-cf5e-4068-98d5-1ddcbad9df4b)
+<br/> Image: port-security address
+
+</div>
+
 ## 4.5 Implement DHCP snooping security
+
+On S2, I enabled DHCP snooping and configured DHCP snooping on VLAN 10 as
+confirmed by the picture below:
+
+<div align="center">
+
+![image](https://github.com/user-attachments/assets/cc91f01d-7810-4ad0-9880-7b9445317494)
+
+</div>
+
+Next I configured the trunk port on S2 as a trusted port as confirmed by the picture
+below:
+
+<div align="center">
+
+![image](https://github.com/user-attachments/assets/051bb12a-9d25-4d90-8d23-1f6150632c4d)
+
+</div>
+
+Next I limited the untrusted port F0/18 to five DHCP packets per second as confirmed
+by the picture below:
+
+<div align="center">
+
+![image](https://github.com/user-attachments/assets/655a44bc-0815-4143-a957-efc119510ea5)
+
+</div>
+
+Finally I confirmed the DHCP Snooping on S2 matched the security settings set as
+confirmed by the picture below:
+
+<div align="center">
+
+![image](https://github.com/user-attachments/assets/56d5ac42-9be0-464f-bce6-f80d486ff052)
+
+
+</div>
+
 ## 4.6 Implement PortFast and BPDU guard
+
+### PortFast
+
+PortFast is a Cisco feature that can be configured on switch ports connected to end
+devices like workstations or servers, rather than other switches. When PortFast is
+enabled on a port, the port bypasses the usual Spanning Tree Protocol (STP) states
+(Listening, Learning) and moves directly to the Forwarding state. This immediate
+transition minimizes the delay for end devices to start communicating on the
+network.
+
+### BPDU Guard
+
+PDU Guard is a security feature used in conjunction with PortFast. It protects the
+network from potential Spanning Tree Protocol (STP) topology changes caused by an
+unintended or malicious connection of a switch or another device that sends Bridge
+Protocol Data Units (BPDUs) into a PortFast-enabled port. When BPDU Guard is
+enabled, if any BPDU is received on that port, the port is immediately put into an
+error-disabled state, effectively shutting it down.<br/>
+
+First I configured PortFast on all the access ports that are in use on both switches as
+confirmed in the pictures below:
+
+<div align="center">
+
+
+![image](https://github.com/user-attachments/assets/598b6787-8e0f-431b-b323-9f147d257228)
+<br/> Image: PortFast on S1 from interface f0/5 - 6
+
+![image](https://github.com/user-attachments/assets/67c2fbae-a331-457a-9321-0f57528952d9)
+<br/> Image: PortFast on S2 from interface f0/18
+
+</div>
+
+Next I configured BPDU guard on S1 and S2 VLAN10 access ports connected to
+PC-A and PC-B as confirmed by the pictures below:
+
+<div align="center">
+
+![image](https://github.com/user-attachments/assets/e894804c-39cc-4b97-84c4-c6a93ca5a583)
+<br/> Image: BPDU guard on S1
+
+![image](https://github.com/user-attachments/assets/4f6817f4-f73b-4774-b36c-0413e59ce82b)
+<br/> Image: BPDU guard on S2
+
+</div>
+
+Finally I verified that BPDU guard and PortFast are enabled on the appropriate ports as shown by the pictures below:
+
+<div align="center">
+
+![image](https://github.com/user-attachments/assets/3678e797-609f-4661-b602-07d0cc2f7e6c)
+<br/> Image: BPDU guard and PortFast on S1 interface f0/6
+
+![image](https://github.com/user-attachments/assets/f3b97e2f-222e-4406-a7fc-83bd68aef58f)
+
+<br/> Image: BPDU guard on S2
+
+</div>
+
 ## 4.7 Verify end-to-end connectivity
+
+I verified connectivity from PC-A by pinging the listed devices as shown below:
+
+<div align="center">
+
+![image](https://github.com/user-attachments/assets/c4b942e3-3a86-4c24-85fa-4e7b146ec3da)
+<br/> Image: Ping from PC-A to R1 interface G0/0/1
+
+
+![image](https://github.com/user-attachments/assets/937c6693-648c-4ad3-bc5e-f883b2c7179d)
+<br/> Image: Ping from PC-A ro R1 interface 10.10.1.1
+
+
+![image](https://github.com/user-attachments/assets/6fea1ddd-4cc6-466c-8233-0e8640ef7577)
+<br/> ![image](https://github.com/user-attachments/assets/af0472f3-0c1d-4292-b099-f6d625fdf534)
+
+
+
+</div>
+
+
+
 # 5. Conclusion
+
+In conclusion, the network configuration process successfully addressed each objective, resulting in a fully operational and secure network environment. By cabling the network and configuring essential devices, a solid groundwork was laid. The detailed VLAN configurations on the switches facilitated organized network segmentation and improved traffic management. Moreover, the rigorous implementation of switch security protocols, including trunking, port security, and DHCP snooping, fortified the network against potential threats and vulnerabilities.Verifying end-to-end connectivity confirmed the efficacy of these configurations.This systematic approach not only achieved the desired outcomes but also enhanced the overall security and performance of the network, demonstrating the effectiveness ofmeticulous planning and execution in network management.
