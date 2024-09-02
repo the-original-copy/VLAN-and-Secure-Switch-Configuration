@@ -48,6 +48,7 @@ picture below:
 
 </div>
 ## 2.2 Configure Router R1
+
 The script below sets up basic router configuration, including setting the hostname, disabling DNS lookup, and excluding specific IP address ranges from the DHCP pool
 to reserve them for static use.
 
