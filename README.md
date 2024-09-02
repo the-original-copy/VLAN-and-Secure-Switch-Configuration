@@ -8,7 +8,7 @@
  &nbsp;&nbsp;2.3[ Configure and Verify Basic Switch Settings](https://github.com/the-original-copy/VLAN-and-Secure-Switch-Configuration/blob/main/README.md#23-configure-and-verify-basic-switch-settings)</br>
 3.[ Part 2: Configure VLANs on Switches](https://github.com/the-original-copy/VLAN-and-Secure-Switch-Configuration/blob/main/README.md#3-part-2-configure-vlans-on-switches)</br>
   &nbsp;&nbsp;3.1[ Configure VLAN 10](https://github.com/the-original-copy/VLAN-and-Secure-Switch-Configuration/blob/main/README.md#31-configure-vlan-10)</br>
- &nbsp;&nbsp;3.2[ Configure the SVI for VLAN 1O](https://github.com/the-original-copy/VLAN-and-Secure-Switch-Configuration/blob/main/README.md#32-configure-the-svi-for-vlan-10)</br>
+ &nbsp;&nbsp;3.2[ Configure the SVI for VLAN 10](https://github.com/the-original-copy/VLAN-and-Secure-Switch-Configuration/blob/main/README.md#32-configure-the-svi-for-vlan-10)</br>
   &nbsp;&nbsp;3.3[ Configure VLAN 333 with the name Native on S1 and S2](https://github.com/the-original-copy/VLAN-and-Secure-Switch-Configuration/blob/main/README.md#33-configure-vlan-333-with-the-name-native-on-s1-and-s2)</br>
 4.[ Part 3: Configure Switch Security](https://github.com/the-original-copy/VLAN-and-Secure-Switch-Configuration/blob/main/README.md#4-part-3-configure-switch-security)</br>
   &nbsp;&nbsp;4.1[ Implement 802.1Q trunking](https://github.com/the-original-copy/VLAN-and-Secure-Switch-Configuration/blob/main/README.md#41-implement-8021q-trunking)</br>
