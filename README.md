@@ -8,7 +8,7 @@
 ## 2.3 Configure and Verify Basic Switch Settings
 # 3 Part 2: Configure VLANs on Switches
 ## 3.1 Configure VLAN 10
-## 3.2 Configure the SVI for VLAN 1O
+## 3.2 Configure the SVI for VLAN 10
 ## 3.3 Configure VLAN 333 with the name Native on S1 and S2
 # 4 Part 3: Configure Switch Security
 ## 4.1 Implement 802.1Q trunking
