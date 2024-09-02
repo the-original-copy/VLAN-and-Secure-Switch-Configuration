@@ -188,6 +188,51 @@ picture below:
 
 # 4. Part 3: Configure Switch Security
 ## 4.1 Implement 802.1Q trunking
+
+On both switches I configured trunking on F0/1 to use VLAN 333 as the native as
+shown in the pictures below:
+
+<div align="center">
+
+![image](https://github.com/user-attachments/assets/fb1ebf3b-7bed-4570-a7bc-7f1a71175a92)
+<br/>Image: 802.1Q trunking on S1
+
+![image](https://github.com/user-attachments/assets/b0d7e4f4-c875-47c5-9cea-34d31a59b91b)
+<br/>Image: 802.1Q trunking on S2
+
+
+</div>
+
+Next I verified that trunking has been configured on both switches as shown below:
+
+<div align="center">
+
+![image](https://github.com/user-attachments/assets/85b8da8e-a818-4f28-877c-50bf54dff911)
+
+
+</div>
+
+Next I disabled DTP negotiation on F0/1 on both switch S1 and S2 as shown below:
+
+<div align="center">
+
+
+![image](https://github.com/user-attachments/assets/f0e9599b-2dfc-401e-ab9c-b3ab6635d4e7)
+
+
+</div>
+
+I verified that DTP negotiation was disabled as confirmed by the picture below:
+
+<div align="center">
+
+
+![image](https://github.com/user-attachments/assets/dd8edf56-5051-4898-a073-b887c1f2b0cc)
+
+
+
+</div>
+
 ## 4.2 Configure access ports
 ## 4.3 Secure and disable unused switchports
 ## 4.4 Document and implement port security features
