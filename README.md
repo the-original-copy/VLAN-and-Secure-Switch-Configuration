@@ -4,7 +4,7 @@
 1. [ Introduction](https://github.com/the-original-copy/VLAN-and-Secure-Switch-Configuration/blob/main/README.md#1-introduction)</br>
 2. [ Part 1: Configure the Network Devices](https://github.com/the-original-copy/VLAN-and-Secure-Switch-Configuration/blob/main/README.md#2-part-1-configure-the-network-devices)</br>
   &nbsp;&nbsp;2.1[ Cable the Network](https://github.com/the-original-copy/VLAN-and-Secure-Switch-Configuration/blob/main/README.md#22-configure-router-r1)</br>
-  &nbsp;&nbsp;2.2[ Configure Router R1](https://github.com/the-original-copy/VLAN-and-Secure-Switch-Configuration/blob/main/README.md#23-configure-and-verify-basic-switch-settings)</br>
+  &nbsp;&nbsp;2.2[ Configure Router R1](https://github.com/the-original-copy/VLAN-and-Secure-Switch-Configuration/blob/main/README.md#22-configure-router-r1)</br>
  &nbsp;&nbsp;2.3[ Configure and Verify Basic Switch Settings](https://github.com/the-original-copy/VLAN-and-Secure-Switch-Configuration/blob/main/README.md#23-configure-and-verify-basic-switch-settings)</br>
 3.[ Part 2: Configure VLANs on Switches](https://github.com/the-original-copy/VLAN-and-Secure-Switch-Configuration/blob/main/README.md#3-part-2-configure-vlans-on-switches)</br>
   &nbsp;&nbsp;3.1[ Configure VLAN 10](https://github.com/the-original-copy/VLAN-and-Secure-Switch-Configuration/blob/main/README.md#31-configure-vlan-10)</br>
