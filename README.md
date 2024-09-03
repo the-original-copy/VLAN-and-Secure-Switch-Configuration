@@ -466,9 +466,7 @@ I verified connectivity from PC-A by pinging the listed devices as shown below:
 
 
 ![image](https://github.com/user-attachments/assets/6fea1ddd-4cc6-466c-8233-0e8640ef7577)
-<br/> ![image](https://github.com/user-attachments/assets/af0472f3-0c1d-4292-b099-f6d625fdf534)
-
-
+<br/> Image: Ping from PC-A to S1
 
 </div>
 
